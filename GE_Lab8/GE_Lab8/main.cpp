@@ -37,11 +37,15 @@ void physic1() {
 			m_mutex.lock();
 			m_player.position.x += rand() % 5;
 			m_player.position.y += rand() % 5;
-			std::cout << "physic1: ticket: " << ticketNumber << ", position = (" << m_player.position.x << " , " << m_player.position.y << " )" << std::endl;
+			cout << "physic1: ticket: " << ticketNumber << ", position = (" << m_player.position.x << " , " << m_player.position.y << " )" << endl;
 			m_mutex.unlock();
 
+			m_mutex.lock();
 			m_currentTicket++;
 			m_max--;
+
+			cout << "counter: " << m_max << endl;
+			m_mutex.unlock();
 			//i--;
 		}
 
@@ -69,11 +73,17 @@ void physic2() {
 			m_mutex.lock();
 			m_player.position.x -= rand() % 5;
 			m_player.position.y -= rand() % 5;
-			std::cout << "physic2: ticket: " << ticketNumber << ", position = (" << m_player.position.x << " , " << m_player.position.y << " )" << std::endl;
+			cout << "physic2: ticket: " << ticketNumber << ", position = (" << m_player.position.x << " , " << m_player.position.y << " )" << endl;
 			m_mutex.unlock();
 
+			m_mutex.lock();
 			m_currentTicket++;
 			m_max--;
+
+			cout << "counter: " << m_max << endl;
+			m_mutex.unlock();
+
+			//i--;
 		}
 
 		end = true;
@@ -100,11 +110,16 @@ void input() {
 			m_mutex.lock();
 			m_player.position.x = rand() % 5;
 			m_player.position.y = rand() % 5;
-			std::cout << "input: ticket: " << ticketNumber << ", position = (" << m_player.position.x << " , " << m_player.position.y << " )" << std::endl;
+			cout << "input: ticket: " << ticketNumber << ", position = (" << m_player.position.x << " , " << m_player.position.y << " )" << endl;
 			m_mutex.unlock();
 
+			m_mutex.lock();
 			m_currentTicket++;
 			m_max--;
+
+			cout << "counter: " << m_max << endl;
+			m_mutex.unlock();
+			//i--;
 		}
 
 		end = true;
@@ -131,11 +146,17 @@ void render() {
 			m_mutex.lock();
 			//m_player.position.x = rand() % 5;
 			//m_player.position.y = rand() % 5;
-			std::cout << "render: ticket: " << ticketNumber << ", position = (" << m_player.position.x << " , " << m_player.position.y << " )" << std::endl;
+			cout << "render: ticket: " << ticketNumber << ", position = (" << m_player.position.x << " , " << m_player.position.y << " )" << endl;
 			m_mutex.unlock();
 
+			m_mutex.lock();
 			m_currentTicket++;
 			m_max--;
+
+			cout << "counter: " << m_max << endl;
+			m_mutex.unlock();
+
+			//i--;
 		}
 
 		end = true;
